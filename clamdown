@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+CLAMSHELL=$(ioreg -r -k AppleClamshellState | grep AppleClamshellState | grep Yes)
+
+if [ "$CLAMSHELL" ]; then
+    pmset sleepnow
+fi
